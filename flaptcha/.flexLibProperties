@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
+  <includeClasses>
+    <classEntry path="com.reygazu.flaptcha.managers.CaptchaSprite"/>
+    <classEntry path="com.reygazu.flaptcha.events.CaptchaManagerEvent"/>
+    <classEntry path="com.reygazu.flaptcha.spark.FlaptchaBox"/>
+    <classEntry path="com.reygazu.flaptcha.spark.supportClasses.FlaptchaBoxDefaultSkin"/>
+    <classEntry path="com.reygazu.flaptcha.events.FlaptchaBoxEvent"/>
+  </includeClasses>
+  <includeResources/>
+  <namespaceManifests/>
+</flexLibProperties>

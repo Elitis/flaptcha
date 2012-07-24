@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
+		xmlns:s="library://ns.adobe.com/flex/spark"
+		xmlns:mx="library://ns.adobe.com/flex/mx"
+		currentState="question">
+	<!-- host component -->
+	<fx:Metadata>
+		[HostComponent("com.reygazu.flaptcha.spark.FlaptchaBox")]
+	</fx:Metadata>
+	<s:states>
+		<s:State name="question"/>
+		<s:State name="success"/>
+	</s:states>
+	
+	<!-- SkinParts
+	name=refreshBtn, type=spark.components.Button, required=false
+	name=textInput, type=spark.components.TextInput, required=true
+	name=captcha, type=mx.core.UIComponent, required=true
+	-->
+	
+	<s:BorderContainer  borderVisible="false" cornerRadius="7" width="100%" height="100%">
+		<s:backgroundFill>
+			<s:LinearGradient rotation="90">
+				<s:GradientEntry color="0x990000"  ratio="0"/>
+				<s:GradientEntry color="0x550000"  ratio="1"/>	
+			</s:LinearGradient>		
+		</s:backgroundFill>
+		
+		<s:layout>
+			<s:VerticalLayout gap="5" paddingBottom="5" paddingLeft="5" paddingTop="5" paddingRight="5">
+				
+			</s:VerticalLayout>
+		</s:layout>
+		<s:Label includeIn="success" color="#FFFFFF" text="Correct!"/>
+		
+		<s:BorderContainer borderVisible="false" cornerRadius="7" width="310" height="65">
+			<s:backgroundFill>
+				<s:SolidColor color="0xFFFFFF"/>					
+			</s:backgroundFill>
+			<mx:UIComponent id="captcha" left="3" top="3"/>
+		
+		</s:BorderContainer>
+		<s:Group>
+			
+			<s:Label width="57" height="20" color="#B06464" fontSize="9"
+					 text="reCAPTCHA in Flex" textAlign="center"
+					 x="253" y="32"/>		
+		<s:HGroup width="100%" height="100%">
+			
+			<s:Group>
+				
+				
+				<s:BorderContainer borderVisible="false" cornerRadius="5" width="173" height="50">
+					<s:backgroundFill>
+						<s:SolidColor color="0xFFDC73"/>					
+					</s:backgroundFill>
+					
+					
+					
+					<s:layout>
+						<s:VerticalLayout paddingLeft="25" paddingTop="10">
+							
+						</s:VerticalLayout>
+					</s:layout> <!-- ABCDEF -->
+					<s:Label fontSize="10" text="Type the two words:"/>
+					<s:TextInput id="textInput" width="95%" height="19" borderColor="0xCCA940"  focusAlpha="0"
+								 fontSize="12"/>
+					
+					
+				</s:BorderContainer>
+				
+				<s:Image x="6" width="16" height="40" alpha=".4" backgroundAlpha="1.0"
+						 blendMode="multiply" smooth="true" source="@Embed('../images/arrow.png')"/>
+			</s:Group>
+			
+			
+			
+			<s:VGroup gap="1">
+				<s:Image id="refreshBtn" source="@Embed('../images/refresh.gif')" buttonMode="true"/>
+				<s:Image id="aboutBtn" buttonMode="true" source="@Embed('../images/help.gif')"/>
+			</s:VGroup>
+			
+			<s:Group>
+				<s:Image smooth="false" source="@Embed('../images/logo.png')"/>
+			</s:Group>
+
+			
+		</s:HGroup>
+		</s:Group>
+		
+	</s:BorderContainer>
+	
+</s:Skin>
