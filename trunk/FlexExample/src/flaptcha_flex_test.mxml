@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" minWidth="955" minHeight="600" xmlns:managers="com.reygazu.flaptcha.managers.*" xmlns:ns1="*" xmlns:spark="com.reygazu.flaptcha.spark.*">
+	<fx:Script>
+		<![CDATA[
+			import com.reygazu.flaptcha.events.FlaptchaBoxEvent;
+			
+			protected function onSuccessHandler(event:FlaptchaBoxEvent):void
+			{
+				anim.play();
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		
+		<s:Animate id="anim" targets="{[flaptcha]}" duration="1000">
+			<s:SimpleMotionPath property="alpha" valueFrom="0.0" valueTo="1.0" />			
+			<s:SimpleMotionPath property="rotationY" valueFrom="-45" valueTo="0" />
+			<s:SimpleMotionPath property="scaleX" valueFrom="1.5" valueTo="1" />
+			<s:SimpleMotionPath property="scaleY" valueFrom="1.5" valueTo="1" />
+		</s:Animate>
+	</fx:Declarations>
+	
+	<spark:FlaptchaBox id="flaptcha" skinClass="com.reygazu.flaptcha.spark.supportClasses.FlaptchaBoxDefaultSkin" success="onSuccessHandler(event)"/>
+</s:Application>
